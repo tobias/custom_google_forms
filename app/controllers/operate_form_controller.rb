@@ -1,6 +1,7 @@
 class OperateFormController < ApplicationController
   def index
-    @forms = GoogleForm.all
+    #@forms = GoogleForm.all
+    redirect_to 'http://ashevilletkd.com/'
   end
   
   def show
