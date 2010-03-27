@@ -1,1 +1,105 @@
-{tournament info}
+- content_for :title, '2010 JTF Tae Kwon Do Tournament'
+- content_for :head do 
+  %style{:type => 'text/css'}
+    :sass
+      #tournament
+        color: #000
+      #header
+        font:
+          size: 4em
+          weight: bold
+        padding-top: 20px
+      #sub_header
+        font-size: 2em
+      #header, #sub_header
+        line-height: 1em
+        text-align: center
+      #info
+        font-size: 1.2em
+        td.label
+          text-align: right
+          vertical-align: top
+          font-weight: bold
+          padding-right: 10px
+        td
+          padding-bottom: 10px
+      .ss-form-heading
+        display: none
+      #sunsoo
+        #logo
+          width: 100%
+          height: 231px
+          background:
+            image: url(/images/sun_soo_logo_480.png)
+            repeat: no-repeat
+            position: center top
+
+#tournament
+  #header
+    %div
+      2010 JTF
+    %div
+      National Invitational
+    %div
+      Traditional Tae Kwon Do Tournament
+  #sub_header
+    == (hosted by #{link_to "Asheville Sun Soo Tae Kwon Do", 'http://ashevilletkd.com/', :target => :blank})
+
+  #sunsoo
+    #logo
+    #contact
+
+  #info
+    %table
+      %tr
+        %td.label
+          Date:
+        %td
+          Saturday, May 8th 2010
+      %tr
+        %td.label
+          Location:
+        %td
+          == #{link_to 'Justice Center', 'http://www2.unca.edu/campusmap/justcgym.htm', :target => :blank}, UNC-Asheville Campus (Asheville, NC)
+      %tr
+        %td.label
+          Doors Open:
+        %td
+          9:00am (Pre-registration and at door registration)
+      %tr
+        %td.label
+          Opening Ceremonies: 
+        %td
+          11:00am (competition to immediately follow)
+      %tr
+        %td.label
+          General Admission (spectators):
+        %td
+          $5/single or $15/family
+      %tr
+        %td.label
+          Competition Fee:
+        %td
+          %div
+            %em
+              Before April 20th:
+            %span
+              $45/competitor or $90/family of competitors
+          %div
+            %em
+              April 21th thru May 8th:
+            %span
+              $60/competitor or $120/family of competitors
+          %div
+            %strong
+              (registration includes eligibility in all events: forms, sparring, self-defense, and board breaking)
+      %tr
+        %td.label
+          Registration:
+        %td
+          == You can #{link_to 'register online', '/tournament-registration'}, or download, print, and mail in your #{link_to 'registration form', '#'}
+      %tr
+        %td.label
+          Payment:
+        %td
+          
