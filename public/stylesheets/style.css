@@ -94,7 +94,7 @@ label {
   display: inline; }
 
 
-input {
+/ {
   background: white;
   height: 25px;
   font-size: 20px;
@@ -157,13 +157,10 @@ thead {
 .ss-grid-row-even {
   background: #eee; }
 
-.ss-navigate input {
-  background: url('/images/send-btn.png');
-  text-indent: -9999px;
-  border: none;
-  width: 113px;
-  height: 35px;
-  float: right !important; }
+.ss-navigate {
+  text-align: center; }
+  .ss-navigate input {
+    font-size: 2em; }
 
 .buttons input {
   width: 113px;

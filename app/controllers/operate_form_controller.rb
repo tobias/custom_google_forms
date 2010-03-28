@@ -21,11 +21,22 @@ class OperateFormController < ApplicationController
       params.delete(:id)
       params.delete(:action)
       params.delete(:controller)
+      
+      params.each do |key, value|
+        if key =~ /\.group$/ and value.is_a?(Array)
+          params[key] = value.join(', ')
+        end
+      end
+
       google_form_action = params.delete(:google_form)
+      
+      session[:form_data] = params
+
+      Rails.logger.info "#### #{params.inspect}"
       response = @google_form.submit(google_form_action, params)
       result_html = response.body
       if result_html =~ %r{<title>Thanks!<\/title>}
-        redirect_to '/thankyou.html'
+        redirect_to @google_form.thank_you_path.blank? ? '/thankyou.html' : @google_form.thank_you_path
       elsif result_html =~ /Moved Temporarily/
         render :text => "Ooh, this form has been moved or disabled. How odd."
       else
@@ -50,7 +61,15 @@ class OperateFormController < ApplicationController
     return false unless google_form
     google_form_action = google_form["action"]
     google_form["action"] = submit_operate_form_url(:id => @google_form.id, :google_form => google_form_action)
-    
+
+    google_form.css("li.ss-choice-item input[type=checkbox]").each do |cb|
+      cb['name'] += "[]"
+    end
+
+    google_form.css('.ss-navigate input').each do |inp|
+      inp['value'] = 'Submit Registration'
+    end
+
     css_node = doc.create_element('link')
     css_node["href"] = "/stylesheets/reset.css"
     css_node["rel"] = "stylesheet"
