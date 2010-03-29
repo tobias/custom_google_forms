@@ -6,11 +6,12 @@
         color: #000
       #header
         font:
-          size: 4em
+          size: 3em
           weight: bold
         padding-top: 20px
       #sub_header
         font-size: 2em
+        margin-bottom: 20px
       #header, #sub_header
         line-height: 1em
         text-align: center
@@ -23,17 +24,7 @@
           padding-right: 10px
         td
           padding-bottom: 10px
-      .ss-form-heading
-        display: none
-      #sunsoo
-        #logo
-          width: 100%
-          height: 231px
-          background:
-            image: url(/images/sun_soo_logo_480.png)
-            repeat: no-repeat
-            position: center top
-
+        
 #tournament
   #header
     %div
@@ -45,9 +36,6 @@
   #sub_header
     == (hosted by #{link_to "Asheville Sun Soo Tae Kwon Do", 'http://ashevilletkd.com/', :target => :blank})
 
-  #sunsoo
-    #logo
-    #contact
 
   #info
     %table
@@ -65,12 +53,12 @@
         %td.label
           Doors Open:
         %td
-          9:00am (Pre-registration and at door registration)
+          9:00am (Pre-registration check-in and at-door registration)
       %tr
         %td.label
           Opening Ceremonies: 
         %td
-          11:00am (competition to immediately follow)
+          11:00am (competition immediately follows)
       %tr
         %td.label
           General Admission (spectators):
@@ -80,26 +68,42 @@
         %td.label
           Competition Fee:
         %td
-          %div
-            %em
-              Before April 20th:
-            %span
-              $45/competitor or $90/family of competitors
-          %div
-            %em
-              April 21th thru May 8th:
-            %span
-              $60/competitor or $120/family of competitors
-          %div
-            %strong
-              (registration includes eligibility in all events: forms, sparring, self-defense, and board breaking)
+          = render 'tournament_fees'
       %tr
         %td.label
           Registration:
         %td
-          == You can #{link_to 'register online', '/tournament-registration'}, or download, print, and mail in your #{link_to 'registration form', '#'}
+          == You can #{link_to 'register online', '/tournament-registration'}, or download, print, and mail/fax in your #{link_to 'registration form', '/2010_JTF_tournament_registration.pdf'}
       %tr
         %td.label
           Payment:
         %td
+          If you have already registered, you can pay with a credit card:
           = render 'pre_registration_payment_button'
+          Or by mailing a check to:
+          %br/
+          Asheville Sun Soo
+          %br/
+          1009 Patton Ave
+          %br/
+          Asheville, NC 28806
+          .small_note
+            (make checks payable to Asheville Sun Soo)
+      %tr
+        %td.label
+          For More Information:
+        %td
+          Contact Master Tony Morris, 
+          = link_to 'Asheville Sun Soo Tae Kwon Do', 'http://ashevilletkd.com/'
+          %br/
+          phone: 
+          %strong
+            828.505.4309
+          or 
+          %strong
+            828.808.1536
+          %br/
+          email: 
+          = mail_to 'tkdtonymorris@gmail.com'
+
+ 

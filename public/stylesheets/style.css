@@ -29,16 +29,20 @@ small {
 
 h1 {
   text-indent: -9999px;
-  background: url('/images/top_bar.png') no-repeat;
+  background-image: url('/images/sun_soo_logo_240.png');
+  background-repeat: no-repeat;
+  background-position: center top;
   width: 100%;
-  height: 177px;
+  height: 115px;
   margin-bottom: 15px; }
 
 h2 {
   font-size: 30px;
   font-weight: bold;
-  color: #880909;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px; }
 
 hr {
   display: none; }
@@ -55,6 +59,9 @@ a:hover {
     background: url('../images/form-icon.png') no-repeat center left;
     padding-left: 20px;
     margin-bottom: 10px; }
+
+.ss-form-desc {
+  font-weight: bold; }
 
 .ss-form-container {
   width: 760px;
@@ -80,19 +87,22 @@ a:hover {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  text-align: center; }
 
 label {
-  font-weight: bold;
-  color: #880909; }
+  font-weight: bold; }
 
 .ss-form-entry label.ss-q-help {
   font-weight: normal;
-  color: #333;
+  font-style: italic;
+  color: #666;
   display: block; }
 .ss-form-entry label span.ss-required-asterisk {
   display: inline; }
 
+.ss-item {
+  margin-bottom: 10px; }
 
 / {
   background: white;
@@ -108,20 +118,26 @@ label {
   width: 758px;
   height: 100px; }
 
-.ss-checkbox {
+.ss-checkbox label {
+  font-weight: normal; }
+
+/ {
   background: #ecf1f3;
   margin: 0 -20px;
   margin-bottom: 20px;
   padding: 10px 20px 10px 20px;
   border-top: 1px solid #a9b4b8;
   border-bottom: 1px solid #a9b4b8; }
-  .ss-checkbox label {
+  / label {
     font-weight: normal;
     color: #333;
     display: inline; }
-  .ss-checkbox .ss-q-checkbox {
+  / .ss-q-checkbox {
     width: auto !important;
     margin-right: 10px; }
+
+label.ss-scalenumber {
+  font-weight: normal; }
 
 .errorbox-component {
   margin-bottom: 30px;
@@ -140,11 +156,12 @@ label.ss-gridnumber {
 .ss-grid .ss-form-entry input {
   height: 18px; }
 
+form br {
+  display: none; }
+
 .ss-leftlabel {
   text-align: right;
-  background: #c0cacc;
-  padding: 5px;
-  border-right: 1px solid #a9b4b8; }
+  padding: 5px; }
 
 thead {
   background: #c0cacc;
@@ -172,3 +189,13 @@ thead {
 
 li.error input, li.error textarea {
   border-color: red; }
+
+.small_note {
+  font-size: 0.8em;
+  font-weight: bold; }
+
+.fees div {
+  margin-bottom: 5px; }
+.fees .dates {
+  font-weight: bold;
+  font-style: italic; }

@@ -1,1 +1,48 @@
+- content_for :head do 
+  %style{:type => 'text/css'}
+    :sass
+      h3
+        font-weight: bold
+        font-size: 1.2em
+        margin-bottom: 20px
+        margin-top: 20px
+
+%h3
+  Thanks for registering. We'll see you on May 8th!
+
+%strong
+  If you have not yet paid your registration fee, please do so now.
+
+%h3 Competition Fees
+= render 'tournament_fees'
+
+%strong
+  You can pay with a credit card: 
 = render 'pre_registration_payment_button'
+%br/
+%strong
+  Or by mailing a check to:
+%br/
+Asheville Sun Soo
+%br/
+1009 Patton Ave
+%br/
+Asheville, NC 28806
+.small_note
+  (make checks payable to Asheville Sun Soo)
+%br/
+%strong
+  If you have any questions, please contact Master Tony Morris, 
+  = link_to 'Asheville Sun Soo Tae Kwon Do', 'http://ashevilletkd.com/'
+%br/
+phone: 
+%strong
+  828.505.4309
+or 
+%strong
+  828.808.1536
+%br/
+email: 
+= mail_to 'tkdtonymorris@gmail.com'
+
+
