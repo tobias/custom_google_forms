@@ -32,7 +32,7 @@ class OperateFormController < ApplicationController
       
       session[:form_data] = params
 
-      Rails.logger.info "#### #{params.inspect}"
+      #Rails.logger.info "#### #{params.inspect}"
       response = @google_form.submit(google_form_action, params)
       result_html = response.body
       if result_html =~ %r{<title>Thanks!<\/title>}
