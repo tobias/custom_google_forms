@@ -17,12 +17,13 @@ class EventsController < ApplicationController
        ['entry.7.group', 'Events']
       ]
     
-    session[:form_data]
-
-    RegistrationCompleteMailer.deliver_registration_notification('JTF 2010 Tournament',
-                                                                 session[:form_data],
-                                                                 response_map,
-                                                                 url)
+    if session[:form_data] and !session[:form_data][:notification_sent]
+      RegistrationCompleteMailer.deliver_registration_notification('JTF 2010 Tournament',
+                                                                   session[:form_data],
+                                                                   response_map,
+                                                                   url)
+      session[:form_data][:notification_sent] = true
+    end
   end
   
   def summer_camp
